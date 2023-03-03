@@ -9,7 +9,7 @@ A simple Cake3 plugin to authenticate users with Cookies. This plugin is based o
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://packagist.org/packages/xety/cake3-cookieauth)
 
 ## Requirements
-* CakePHP 3.X
+* CakePHP 4.X
 
 ## Installation
 Run : `composer require xety/cake3-cookieauth:1.*`
