@@ -5,8 +5,8 @@ use Cake\Auth\BaseAuthenticate;
 use Cake\Controller\ComponentRegistry;
 use Cake\Controller\Component\CookieComponent;
 use Cake\Event\Event;
-use Cake\Network\Request;
-use Cake\Network\Response;
+use Cake\Http\ServerRequest as Request;
+use Cake\Http\Response;
 
 class CookieAuthenticate extends BaseAuthenticate
 {
@@ -20,12 +20,12 @@ class CookieAuthenticate extends BaseAuthenticate
     public function __construct(ComponentRegistry $registry, array $config = [])
     {
         $this->_registry = $registry;
-        $this->config([
+        $this->setConfig([
             'cookie' => [
                 'name' => 'CookieAuth'
             ]
         ]);
-        $this->config($config);
+        $this->setConfig($config);
     }
 
     /**
@@ -67,7 +67,7 @@ class CookieAuthenticate extends BaseAuthenticate
      *
      * @return array
      */
-    public function implementedEvents()
+    public function implementedEvents(): array 
     {
         return [
             'Auth.logout' => 'logout'
